@@ -1,151 +1,187 @@
-<!DOCTYPE html>
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>One-Pager: EDB + Contpaqi - Modernización y Soberanía de Datos</title>
-    <!-- Incluyendo Tailwind CSS para un diseño limpio y responsivo -->
+    <title>EDB Postgres AI: Plataforma Empresarial de Datos y AI</title>
+    <!-- Carga de Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        /* Configuración de color: Azul Profundo (#004081) y Verde Brillante (#00DA67) con toques metálicos */
+        :root {
+            --color-primary: #004081; /* Azul Profundo para acentos */
+            --color-secondary: #00DA67; /* Verde Brillante para contraste */
+            --color-dark: #17202A; /* Gris/Azul oscuro para fondos 'metálicos' */
+            --color-light: #F9FAFB; /* Fondo principal claro */
+        }
+        .bg-primary { background-color: var(--color-primary); }
+        .text-primary { color: var(--color-primary); }
+        .border-primary { border-color: var(--color-primary); }
+        .bg-dark { background-color: var(--color-dark); }
+        .text-secondary { color: var(--color-secondary); }
+        
+        /* Fuente Inter */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f7f9fb;
         }
-        .container-header {
-            background-color: #1a4d8c; /* Azul oscuro corporativo */
+        /* Estilo para iconos/elementos visuales con gradiente sutil */
+        .icon-box {
+            /* Usando los valores RGB del nuevo color primario: 0, 64, 129 */
+            background: linear-gradient(135deg, rgba(0, 64, 129, 0.1), rgba(0, 64, 129, 0.2));
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .highlight-text {
-            color: #ff9900; /* Naranja de contraste */
+        /* Estilo para dar un toque metálico a los botones */
+        .metallic-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
         }
-        .card-shadow {
-            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
-        }
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #ff9900;
-            margin-top: 8px;
-            margin-left: auto;
-            margin-right: auto;
+        .metallic-button:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            transform: translateY(-2px);
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="bg-light text-gray-800 antialiased">
 
-    <!-- Header y Título Principal -->
-    <header class="container-header py-12 px-6 sm:px-10 text-white rounded-b-lg">
-        <div class="max-w-4xl mx-auto text-center">
-            <p class="text-xl sm:text-2xl mb-2 font-light">PROPUESTA ESTRATÉGICA DE INFRAESTRUCTURA</p>
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">
-                EDB + CONTPAQi: La Base para la <span class="highlight-text">Nueva Era Digital y Fiscal</span>
+    <!-- Header / Banner Principal (Fondo Metálico Oscuro) -->
+    <header class="bg-dark text-white pt-16 pb-20 shadow-2xl">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 tracking-tight">
+                EDB Postgres AI: Plataforma Soberana de Datos y AI
             </h1>
-            <p class="mt-4 text-lg font-light italic">
-                Asegurando la escalabilidad y la soberanía de los datos para más de 1.2 millones de usuarios.
+            <p class="text-xl sm:text-2xl font-light text-gray-300 max-w-3xl mx-auto">
+                Liderando la migración a <span class="text-secondary font-semibold">Postgres</span> con herramientas de IA para entornos híbridos y control total sobre sus datos.
             </p>
+            <a href="#solucion" class="mt-8 inline-block bg-primary text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-opacity-90 metallic-button transform hover:scale-105">
+                Descubra el Valor de EDB para su Negocio
+            </a>
         </div>
     </header>
 
-    <!-- Contenido del One-Pager -->
-    <main class="max-w-6xl mx-auto px-6 py-16 sm:py-20">
-
-        <!-- 1. El Desafío de Contpaqi -->
-        <section class="mb-16">
-            <h2 class="section-title text-3xl font-bold text-center mb-10 text-gray-700">El Contexto y el Desafío de CONTPAQi®</h2>
-            <div class="bg-white p-8 sm:p-10 rounded-xl card-shadow border-t-4 border-red-500">
-                <p class="text-lg leading-relaxed mb-4">
-                    CONTPAQi® es el líder indiscutible en software contable y administrativo en México, con más de <span class="font-bold">1.2 millones de usuarios</span> y un rol crucial como <span class="font-bold text-red-600">PAC número 1</span>. Su misión de asegurar el cumplimiento fiscal y la gestión de PYMEs mexicanas requiere una base de datos que ofrezca:
-                </p>
-                <ul class="list-disc list-inside space-y-3 pl-5 text-base sm:text-lg">
-                    <li><span class="font-medium">Escalabilidad Extrema:</span> Soporte para el crecimiento masivo de datos de CFDI, nóminas y transacciones en tiempo real.</li>
-                    <li><span class="font-medium">Estrategia Híbrida Sólida:</span> Unificar y optimizar el rendimiento de sus soluciones Desktop (on-premise) y Nube (SaaS) con una única plataforma de datos.</li>
-                    <li><span class="font-medium">Innovación Acelerada:</span> Integrar rápidamente capacidades de Analítica e Inteligencia Artificial para ofrecer servicios de mayor valor (e.g., validación fiscal predictiva).</li>
-                    <li><span class="font-medium">Mitigación de Costos:</span> Reducir la dependencia y los costos de licenciamiento de bases de datos propietarias.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- 2. EDB como Socio Estratégico (Doble Enfoque: Empresa y Producto) -->
-        <section class="mb-16">
-            <h2 class="section-title text-3xl font-bold text-center mb-10 text-gray-700">EDB: Socio Estratégico para el Crecimiento y la Innovación de CONTPAQi®</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+    <!-- Sección 1: Cómo EDB Ayuda a las Empresas (La Solución) -->
+    <section id="solucion" class="py-16 sm:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-dark">Impulsando la Innovación con EDB Postgres AI</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 
-                <!-- Columna 1: EDB y la Estrategia Corporativa -->
-                <div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-blue-500">
-                    <h3 class="text-2xl font-semibold mb-4 text-blue-800">1. Valor a la Estrategia Corporativa Interna</h3>
-                    <p class="text-base leading-relaxed mb-4">
-                        EDB no solo provee la tecnología, sino la experiencia y el soporte global necesarios para mitigar riesgos, reducir el Costo Total de Propiedad (**TCO**) y transformar la cultura de datos de Contpaqi.
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 pl-5 text-base">
-                        <li><span class="font-medium">Gestión de Riesgos y Compliance:</span> Soporte 24/7/365 crucial para la continuidad de un PAC, con herramientas para la **Soberanía de Datos** y la seguridad fiscal.</li>
-                        <li><span class="font-medium">Optimización de TCO:</span> Eliminación de licencias propietarias caras a través de herramientas de migración que facilitan el cambio y liberan capital para I+D.</li>
-                        <li><span class="font-medium">Desarrollo de Talento:</span> Acceso a la capacitación de EDB, elevando la experiencia interna de los equipos en la plataforma de datos Open Source empresarial más avanzada.</li>
-                        <li><span class="font-medium">Modernización de Legados:</span> Utilización de la compatibilidad mejorada con Oracle para facilitar la transición de las soluciones **Desktop** existentes.</li>
-                    </ul>
+                <!-- Beneficio 1: Base de Datos Soberana -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-primary transform hover:scale-[1.02]">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10h16V7M4 7h16M4 7L12 3l8 4M12 3v18"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Base de Datos Soberana</h3>
+                    <p class="text-gray-600">Postgres siempre activo, **compatible al 100%** con el código abierto, garantizando la disponibilidad, el rendimiento y la soberanía de sus datos críticos.</p>
                 </div>
 
-                <!-- Columna 2: Cómo Ayuda el Producto a las Soluciones CONTPAQi® -->
-                <div class="bg-white p-8 rounded-xl card-shadow border-t-4 border-green-500">
-                    <h3 class="text-2xl font-semibold mb-4 text-green-700">2. Aceleración y Evolución del Producto CONTPAQi®</h3>
-                    <p class="text-base leading-relaxed mb-4">
-                        La plataforma tecnológica **EDB Postgres AI** es el vehículo para potenciar las líneas de productos Contabilidad, Nóminas y Comercial, acelerando la innovación en la Nube:
-                    </p>
-                    <ul class="list-disc list-inside space-y-2 pl-5 text-base">
-                        <li><span class="font-medium">Gestión Híbrida Unificada:</span> **Hybrid Management** para una plataforma de datos común que optimiza el rendimiento y la gestión tanto de las soluciones Desktop (on-premise) como Cloud.</li>
-                        <li><span class="font-medium">Inteligencia Fiscal (AI Factory):</span> Integración nativa de **Inteligencia Artificial** de bajo código para nuevas funcionalidades de valor, como la validación predictiva de CFDI y la detección de anomalías contables.</li>
-                        <li><span class="font-medium">Analítica en Tiempo Real:</span> **Analytics Accelerator** para transformar el análisis de millones de CFDI y transacciones, ofreciendo *insights* rápidos a los usuarios finales de Contpaqi.</li>
-                        <li><span class="font-medium">Disponibilidad 99.999%:</span> Fiabilidad de base de datos de grado empresarial para manejar picos de demanda durante cierres fiscales o períodos de alta facturación.</li>
-                    </ul>
+                <!-- Beneficio 2: Control Híbrido Unificado -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-primary transform hover:scale-[1.02]">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Gestión Híbrida Inteligente</h3>
+                    <p class="text-gray-600">Ofrece un plano de control unificado (Hybrid Management) para gestionar despliegues en **AWS, Azure, Google Cloud** u On-Premises con la misma observabilidad.</p>
+                </div>
+
+                <!-- Beneficio 3: Fábrica de IA de Bajo Código -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-primary transform hover:scale-[1.02]">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-1.25-3M15 11l4-4 2 2-6 6M7 9l4 4-2 2-4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">AI Factory (Bajo Código)</h3>
+                    <p class="text-gray-600">Permite a los desarrolladores crear aplicaciones de IA agéntica **hasta 3 veces más rápido** usando datos propietarios, con herramientas low-code/no-code.</p>
+                </div>
+
+                <!-- Beneficio 4: Aceleración Analítica -->
+                <div class="p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 border-t-4 border-primary transform hover:scale-[1.02]">
+                    <div class="icon-box w-12 h-12 flex items-center justify-center rounded-full mb-4">
+                        <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-4v4m-4-2v2M12 12V4M10 9l2 2 2-2M18 10l-2 2-2-2"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Escalabilidad y Analítica</h3>
+                    <p class="text-gray-600">Integra capacidades de análisis avanzado y soporte para Greenplum, escalando para manejar **cargas de datos masivas** sin comprometer el rendimiento transaccional.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 3. Beneficios Clave para Contpaqi (Alineados a la Alianza) -->
-        <section class="mb-16">
-            <h2 class="section-title text-3xl font-bold text-center mb-10 text-gray-700">Resultados Estratégicos Clave de la Alianza</h2>
-            <div class="bg-white p-8 sm:p-10 rounded-xl card-shadow grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Sección 2: Valor y Diferenciación Empresarial (Datos Adicionales) -->
+    <section id="diferenciacion" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-dark">Diferenciación y Valor Cuantificable para su Empresa</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
                 
-                <!-- Beneficio 1: Estratégico/Financiero -->
-                <div class="text-center p-4 border-r-0 md:border-r border-gray-200">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Reducción del TCO y Riesgo</h4>
-                    <p class="text-gray-600">Eliminación del costo de licencias propietarias y mitigación del riesgo de dependencia de un solo proveedor, con soporte certificado por expertos en Postgres.</p>
-                </div>
-                
-                <!-- Beneficio 2: Producto/Escalabilidad -->
-                <div class="text-center p-4 border-r-0 md:border-r border-gray-200">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.676 0 3.334-.576 4.665-1.564"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Plataforma Unificada para la Nube</h4>
-                    <p class="text-gray-600">Una base de datos de alto rendimiento que soporta las soluciones CONTPAQi® Nube y Desktop por igual, permitiendo una migración fluida de datos críticos.</p>
+                <!-- Diferenciador 1: Compatibilidad Oracle -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Migración Sin Riesgos</h3>
+                    <p class="text-gray-600">EDB reduce significativamente el riesgo de migración de bases de datos propietarias (como Oracle) al ofrecer la **máxima compatibilidad** de características de PostgreSQL en el mercado, simplificando la reescritura de código y acelerando la modernización de aplicaciones legadas.</p>
                 </div>
 
-                <!-- Beneficio 3: Innovación/Mercado -->
-                <div class="text-center p-4">
-                    <svg class="w-10 h-10 mx-auto mb-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 3M9 19l2-3m-2 3a3 3 0 003-3H6a3 3 0 003 3zm0 0l-3-3m3 3V6a3 3 0 00-3-3H6a3 3 0 00-3 3v13c0 1.657 1.343 3 3 3h3a3 3 0 003-3z"></path></svg>
-                    <h4 class="text-xl font-semibold mb-2">Liderazgo Impulsado por IA</h4>
-                    <p class="text-gray-600">Posicionamiento de Contpaqi a la vanguardia tecnológica al integrar IA directamente en la plataforma de datos para ofrecer servicios fiscales y contables inteligentes y predictivos.</p>
+                <!-- Diferenciador 2: Reducción de Costos -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Ahorro Garantizado</h3>
+                    <p class="text-gray-600">Al migrar a EDB Postgres, las empresas pueden esperar una **reducción de costos de licencia de hasta el 80%** en comparación con los proveedores de bases de datos legadas, liberando capital para la inversión en innovación AI.</p>
+                </div>
+
+                <!-- Diferenciador 3: Soporte Experto Global -->
+                <div class="p-6 bg-white rounded-xl shadow-lg border-b-4 border-secondary">
+                    <h3 class="text-2xl font-semibold mb-3 text-primary">Soporte 24/7/365</h3>
+                    <p class="text-gray-600">Acceso a los principales expertos de PostgreSQL a nivel mundial. EDB ofrece soporte técnico, DBA Remoto y **gestión proactiva** para asegurar un rendimiento óptimo y la resolución rápida de incidentes críticos.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 4. Llamada a la Acción -->
-        <section class="text-center pt-10 pb-12 bg-white rounded-xl card-shadow border-t-8 border-orange-500">
-            <h3 class="text-3xl font-bold mb-4 text-gray-700">El Siguiente Paso es la Estrategia</h3>
-            <p class="text-xl mb-8 max-w-2xl mx-auto text-gray-600">
-                La modernización de la plataforma de datos de Contpaqi no es solo una optimización de costos, es una <span class="highlight-text font-bold">inversión en la continuidad del liderazgo y la capacidad de innovación en el mercado fiscal mexicano.</span>
+    <!-- Sección 3: Los Alcances de EDB (Casos de Uso) -->
+    <section id="alcances" class="py-16 sm:py-24 bg-dark text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 text-secondary">Principales Alcances de Implementación</h2>
+            <p class="text-center text-lg max-w-4xl mx-auto mb-16 text-gray-300">
+                EDB ofrece la base tecnológica para afrontar los retos de datos más exigentes de la actualidad.
             </p>
-            <a href="#" class="inline-block px-10 py-4 text-lg font-bold text-white bg-orange-500 rounded-full hover:bg-orange-600 transition duration-300 transform hover:scale-105 shadow-lg">
-                Agenda una Sesión de Arquitectura con EDB
-            </a>
-        </section>
 
-    </main>
+            <div class="grid md:grid-cols-3 gap-10">
+                
+                <!-- Caso de Uso 1: IA Soberana -->
+                <div class="flex flex-col items-center text-center p-6 bg-dark/70 rounded-lg shadow-xl border border-gray-700 hover:border-primary transition duration-300">
+                    <svg class="w-10 h-10 mb-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3">IA Soberana</h3>
+                    <p class="text-gray-400">Garantía de que los datos utilizados por la IA permanecen dentro de las fronteras de seguridad y cumplimiento normativo de la organización.</p>
+                </div>
+
+                <!-- Caso de Uso 2: Modernización de Aplicaciones -->
+                <div class="flex flex-col items-center text-center p-6 bg-dark/70 rounded-lg shadow-xl border border-gray-700 hover:border-primary transition duration-300">
+                    <svg class="w-10 h-10 mb-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.313-4 6-4 6s4 2.687 4 6c0-3.313 4-6 4-6s-4-2.687-4-6zm-4-4h8"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3">Modernización y Cloud</h3>
+                    <p class="text-gray-400">Migración estratégica para evitar el bloqueo del proveedor (vendor lock-in) y adopción ágil de arquitecturas basadas en Kubernetes.</p>
+                </div>
+
+                <!-- Caso de Uso 3: DBaaS Híbrido -->
+                <div class="flex flex-col items-center text-center p-6 bg-dark/70 rounded-lg shadow-xl border border-gray-700 hover:border-primary transition duration-300">
+                    <svg class="w-10 h-10 mb-4 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8"></path></svg>
+                    <h3 class="text-2xl font-semibold mb-3">Plataforma Omni-Data</h3>
+                    <p class="text-gray-400">Consolidación de datos transaccionales, vectoriales (AI) y analíticos en un solo sistema PostgreSQL robusto y escalable.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Llamada a la Acción (Azul Metálico) -->
+    <section class="py-12 bg-primary">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4 md:mb-0">¿Quiere reducir costos y acelerar su estrategia de AI con EDB?</h2>
+            <a href="https://www.enterprisedb.com/contact-us" target="_blank" class="inline-block bg-white text-dark font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-200 transition duration-300 metallic-button">
+                Solicitar una Demo
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="container-header mt-16 py-8 text-center text-white">
-        <p class="text-sm font-light">&copy; 2025 Propuesta Estratégica. Análisis basado en información pública de Contpaqi y EnterpriseDB.</p>
+    <footer class="bg-gray-900 text-gray-400 py-6">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p>&copy; 2025 EDB Postgres AI - One Pager Empresarial. Colaboración para la modernización de su negocio.</p>
+        </div>
     </footer>
 
 </body>
